@@ -8,7 +8,8 @@ console.log(x);
 //console.log(y) 
     
 }
-console.log(x);
+else
+console.log(x =20);
 
 }
 
