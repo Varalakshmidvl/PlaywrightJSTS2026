@@ -5,6 +5,8 @@
 
 ---
 
+//byte code execution commands:node --print-bytecode chapter_01_Basics\01_Basics.js
+
 ## General
 
 | Shortcut | Action |
