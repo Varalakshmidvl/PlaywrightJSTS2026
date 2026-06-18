@@ -1,0 +1,52 @@
+let firstname ='Varalu';
+let lastname ="doddi";
+let fullname = `${firstname} ${lastname}`;
+
+let complete_name = `${firstname} Doddi`;
+console.log("fullname:", fullname); // fullname: Varalu doddi
+console.log("complete_name:", complete_name); // complete_name: Varalu Doddi
+
+//using template literal in real time env 
+const env = "production";
+const userid = 12345;
+const apiUrl = `https://api.example.com/${env}/users/${userid}`;
+console.log("API URL:", apiUrl); // API URL: https://api.example.com/production/users/12345
+
+//we can use template  for dynamic expressions and webtables 
+
+const rowindex = 2;
+const columnName = "email"
+
+// Mock page object for demonstration (normally provided by Playwright)
+const page = {
+  locator: (selector) => ({
+    click: () => console.log(`Clicked element: ${selector}`)
+  }),
+  screenshot: async ({ path }) => console.log(`Screenshot saved to: ${path}`)
+};
+
+(async () => {
+  await page.locator(`table tr:nth-child(${rowindex}) td[data-column="${columnName}"]`).click();
+
+  //logs 
+
+  const testName = "Login Test";
+  const status ="Failed";
+  const duration =2.3
+  console.log(`Test: ${testName} - Status: ${status} - Duration: ${duration} seconds`);
+
+  const testCase ='checkout_flow';
+  const timestamp = Date.now();
+  await page.screenshot({ path: `screenshots/${testCase}_${timestamp}.png` });
+})();
+//API request with template literal
+const username ="Varalu";
+const role ="Manager"
+
+const payload = ` {
+  "username": "${username}",
+  "role": "${role}",
+  "timestamp": "${new Date().toISOString()}"
+
+}`;
+console.log("Payload:", payload);

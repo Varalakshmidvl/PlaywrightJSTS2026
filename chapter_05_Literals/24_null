@@ -1,0 +1,11 @@
+let no_audi_vara_has =null;
+let vara_has_flight;
+
+let audi = "Audi";
+console.log("typeof audi:", typeof audi); // string
+let age=0;
+console.log("typeof age:", typeof age); // number
+
+let color_hex =0xFF000;
+
+let octal =0o777;

@@ -1,13 +1,17 @@
- var a = 10; // Global scope
-console.log(a);
+var v = 10;
+let l = 30;
+const c = 3.14;
 
-function printHello() {
-    console.log("Hello Playwright Automation");
-    var a = 20; // Local scope (function-scoped)
-    console.log(a);
-    if (true) {
-        var a = 30; // Same local scope (function-scoped)
-        console.log(a);
-    }
+var browser = "chrome";
+var browser = "firefox"; // redeclaration allowed
+browser = "edge"; // reassignment allowed
+
+// for, functions
+
+var testCases = ["login", "logout", "signup"];
+
+for (var i = 0; i < testCases.length; i++) {
+    console.log("Running test:", testCases[i]);
 }
-printHello();
+
+console.log("Loop counter leaked outside:", i);
